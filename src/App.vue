@@ -1,32 +1,38 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div id="app" class="principal">
+    <span>App - Instancia do Vue</span>
+    <Entrada />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+//Codigo JavaScript simples
+import Entrada from "./views/Entrada.vue";
+
+//Componente Vue.
+export default {
+  name: "App",
+  components: { Entrada },
+  data() {
+    return {
+      titulo: "Meu primeiro aplicativo publicado",
+    };
+  },
+};
+</script>
+<style>
+html {
+  font-size: 62.5%;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.principal {
+  background-color: #a21010;
+  padding: 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 3rem;
+  width: 40rem;
+  text-align: center;
 }
 </style>
